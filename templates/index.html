@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Based Resume Analyzer</h1>
+
+    <form action="/analyze" method="POST" enctype="multipart/form-data">
+        <input type="file" name="resume" required>
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if match %}
+        <h2>Resume Match Score: {{ match }}%</h2>
+    {% endif %}
+</div>
+
+</body>
+</html>
